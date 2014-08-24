@@ -11,10 +11,9 @@
 """This module exports the Foodcritic plugin class."""
 
 from SublimeLinter.lint import RubyLinter, util
-# from SublimeLinter.lint import Linter
+
 
 class Foodcritic(RubyLinter):
-# class Foodcritic(Linter):
 
     """Provides an interface to foodcritic."""
 
