@@ -2,7 +2,7 @@
 # linter.py
 # Linter for SublimeLinter3, a code checking framework for Sublime Text 3
 #
-# Written by
+# Written by Maxime Pelletier
 # Copyright (c) 2014
 #
 # License: MIT
