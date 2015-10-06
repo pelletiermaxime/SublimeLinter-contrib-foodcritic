@@ -36,6 +36,8 @@ class Foodcritic(RubyLinter):
     excluded_files = ["Berksfile", "Rakefile", "Gemfile"]
 
     def __init__(self, view, syntax):
+        """Override the init to add the has_metadata_rb condition."""
+
         super(RubyLinter, self).__init__(view, syntax)
 
         self.has_metadata_rb = self.get_metadata_rb()
@@ -53,6 +55,8 @@ class Foodcritic(RubyLinter):
         super(RubyLinter, self).lint(hit_time)
 
     def get_cmd(self):
+        """Add condition before calling foodcritic."""
+
         cmd = super(RubyLinter, self).get_cmd()
 
         # Do nothing for unsaved files
@@ -64,6 +68,7 @@ class Foodcritic(RubyLinter):
 
     def get_metadata_rb(self):
         """Get the path to the metadata.rb file for the current file."""
+
         curr_file = self.view.file_name()
 
         if curr_file:
@@ -77,6 +82,7 @@ class Foodcritic(RubyLinter):
     def find_metadata_rb(self, cwd):
         """
         Search parent directories for metadata.rb.
+
         Starting at the current working directory. Go up one directory
         at a time checking if that directory contains a metadata.rb
         file. If it does, return that directory.
